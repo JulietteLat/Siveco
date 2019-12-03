@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <title>MapboxGL & D3.js - dpolygon</title>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/styles/v1/juliettelat/ck3feny0b5qza1ckke2lchcs2.html?fresh=true&title=copy&access_token=pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w#10.1/22.524467/113.407250/0.css' rel='stylesheet' />
 <style>
     
 html, body, #wrapper {
@@ -35,7 +35,7 @@ svg {
 </div>    
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/styles/v1/juliettelat/ck3feny0b5qza1ckke2lchcs2.html?fresh=true&title=copy&access_token=pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w#10.1/22.524467/113.407250/0.js'></script>
 <script>
 d3.json("ken.geojson", function(err, data) {
     mapDraw(data);
@@ -44,13 +44,13 @@ d3.json("ken.geojson", function(err, data) {
     
 function mapDraw(geojson){    
     //mapboxgs トークン
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpbWl6dSIsImEiOiI0cl85c2pNIn0.RefZMaOzNn-IistVe-Zcnw'
+    mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w'
         
     //Setup mapbox-gl map
     var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/mapbox/streets-v8',
-        center: [141.15448379999998, 39.702053　],
+        style: 'mapbox://styles/juliettelat/ck3feny0b5qza1ckke2lchcs2',
+        center: [113.39842, 22.51444],
         zoom: 4,  
     })
     
