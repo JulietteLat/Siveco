@@ -1,9 +1,9 @@
-/*d3.json("factoriesWithTeam.geojson",        
+d3.json("factoriesWithTeam.geojson",        
     function(err, data) {
         mapDraw(data);
     });
 
-function mapDraw(geojson) {*/
+function mapDraw(geojson) {
   //Mapbox access token
    mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w';
 
@@ -20,7 +20,7 @@ function mapDraw(geojson) {*/
   zoom: 9 
   });
   
- /*map.addControl(new mapboxgl.Navigation());
+ map.addControl(new mapboxgl.Navigation());
     
     var container = map.getCanvasContainer()
     var svg = d3.select(container).append("svg")
@@ -45,4 +45,4 @@ function mapDraw(geojson) {*/
             var point = map.project(new mapboxgl.LngLat(lon, lat));
             this.stream.point(point.x, point.y);
     }
-}*/
+}
