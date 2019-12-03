@@ -40,6 +40,20 @@ function mapDraw(geojson) {
     function update() {
         featureElement.attr("d", point);
     }
+
+        map.on("viewreset", update)
+    map.on("movestart", function(){
+        svg.classed("hidden", true);
+    }); 
+    map.on("rotate", function(){
+        svg.classed("hidden", true);
+    }); 
+    map.on("moveend", function(){
+        update()
+        svg.classed("hidden", false);
+    })
+    
+    update()
   
     function projectPoint(lon, lat) {
             var point = map.project(new mapboxgl.LngLat(lon, lat));
