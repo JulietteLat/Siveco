@@ -1018,10 +1018,13 @@ map.addLayer({
 
 
 });
-/*
-circle.onclick = function(event) {
- 'circle-color': "#3bb2d0",
-}*/
+
+/*test interactivité
+function selectfactory() {
+  'circle-color': "#ccc";
+}
+
+fin test interactivité*/
 });
 
 
