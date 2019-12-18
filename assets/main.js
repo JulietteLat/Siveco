@@ -1,5 +1,5 @@
 //SIVECO
-
+//singularité
 mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w';
 
 //the following block gives the geojson file's features
