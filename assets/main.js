@@ -970,15 +970,15 @@ var factories = {
 
 //the following block displays mapbox map
 
-//Sets up mapbox map
+  //Sets up mapbox map
 var map = new mapboxgl.Map({
-// container id
+  // container id
 container: 'map', 
-// stylesheet location
+  // stylesheet location
 style: 'mapbox://styles/juliettelat/ck3pfimbh08vs1dqy4x2ygq9a',
-// starting position [lng, lat]
+  // starting position [lng, lat]
 center: [113.39842, 22.51444], 
-// starting zoom
+  // starting zoom
 zoom: 9 
 });
  
@@ -1026,28 +1026,7 @@ map.on ('load', function () {
 
 //adds a layer that displays highlighted factories when mouseover
  
-//mettre ici le bloc entre ////////////// en dessous si les tests ne fonctionnent pas
-
- map.on('mousemove', 'factories', function(e) {
-    // change mouse cursor style
-    map.getCanvas().style.cursor = 'pointer';
-    // single out the clicked-on feature
-    var feature = e.features[0];
-    // query the factories layer. Use the filter to only collect factories that are visited by the same team
-    var relatedFeatures = map.queryRenderedFeatures('factories',{
-      sourceLayer: 'original',
-      filter: ['nid','teams', feature.properties.teams]
-    });
-    // render found features in an overlay
-    //overlay.innerHTML = '';
-    //add features that are visited by the same team to the highlighted layer
-    map.setFilter ('factories-highlighted', [
-      'nid',
-      'teams',
-      feature.properties.teams
-    ]);
-/////////////////////////////////////
-    map.addLayer({
+  map.addLayer({
     'id': 'factories-highlighted',
     'type': 'circle',
     'source': 'factories',
@@ -1061,8 +1040,26 @@ map.on ('load', function () {
       'circle-color':"#fff",
     }*/
     'filter': ['nid', 'teams', '']
+  });
+
+  map.on('mousemove', 'factories', function(e) {
+    // change mouse cursor style
+    map.getCanvas().style.cursor = 'pointer';
+    // single out the clicked-on feature
+    var feature = e.features[0];
+    // query the factories layer. Use the filter to only collect factories that are visited by the same team
+    var relatedFeatures = map.queryRenderedFeatures('factories',{
+      sourceLayer: 'factories',
+      filter: ['nid','teams', feature.properties.teams]
     });
-////////////////////////////////////
+    // render found features in an overlay
+    //overlay.innerHTML = '';
+    //add features that are visited by the same team to the highlighted layer
+    map.setFilter ('factories-highlighted', [
+      'nid',
+      'teams',
+      feature.properties.teams
+    ]);
   });
 
   map.on('mouseleave', 'factories', function() {
