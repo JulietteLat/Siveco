@@ -979,7 +979,7 @@ style: 'mapbox://styles/juliettelat/ck3pfimbh08vs1dqy4x2ygq9a',
   // starting position [lng, lat]
 center: [113.39842, 22.51444], 
   // starting zoom
-zoom: 9 
+zoom: 10.5
 });
  
 
@@ -1001,7 +1001,7 @@ map.on ('load', function () {
       // make circles larger as the user zooms from z12 to z22
       'circle-radius': {
       'base': 0,
-      'stops': [[12, 3], [22, 6]]
+      'stops': [ [11, 4], [12, 5], [14, 6], [16, 8], [18, 12]]
       },
       //color all circles in white
       'circle-color': "#ccc",
@@ -1030,8 +1030,7 @@ map.on ('load', function () {
     'id': 'factories-highlighted',
     'type': 'circle',
     'source': 'factories',
-    'source-layer': 'factories',
-    'circle-color': "#fff",
+    //'source-layer': 'original', ENCORE LA LIGNE DU DEMON
     /*'paint':{
       'circle-radius': {
       'base': 0,
@@ -1039,7 +1038,7 @@ map.on ('load', function () {
       },
       'circle-color':"#fff",
     }*/
-    'filter': ['nid', 'teams', '']
+    'filter': ['in', 'teams', '']
   });
 
   map.on('mousemove', 'factories', function(e) {
@@ -1048,15 +1047,15 @@ map.on ('load', function () {
     // single out the clicked-on feature
     var feature = e.features[0];
     // query the factories layer. Use the filter to only collect factories that are visited by the same team
-    var relatedFeatures = map.queryRenderedFeatures('factories',{
+    var relatedFeatures = map.querySourceFeatures('factories',{
       sourceLayer: 'factories',
-      filter: ['nid','teams', feature.properties.teams]
+      filter: ['in','teams', feature.properties.teams]
     });
     // render found features in an overlay
     //overlay.innerHTML = '';
     //add features that are visited by the same team to the highlighted layer
     map.setFilter ('factories-highlighted', [
-      'nid',
+      'in',
       'teams',
       feature.properties.teams
     ]);
@@ -1064,7 +1063,7 @@ map.on ('load', function () {
 
   map.on('mouseleave', 'factories', function() {
     map.getCanvas().style.cursor = '';
-    map.setFilter('factories-highlighted', ['nid', 'teams', '']);
+    map.setFilter('factories-highlighted', ['in', 'teams', '']);
   });
 
  /* map.on('click', function(selectfactory){
