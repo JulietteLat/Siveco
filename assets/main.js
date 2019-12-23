@@ -53,6 +53,21 @@ var factories = {
           "teams":"1"
           }
         },
+/////////////////////////////////TEST FACTORY FANTOME (4e décimale long +2)
+        {
+          "type": "Feature",
+          "geometry": {
+             "type": "Point",
+             "coordinates":  [ 113.385529,22.557079 ]
+          },
+          "properties": {
+          "nid":"197363",
+          "address":"石歧区中海锦城泵房",
+          "teams":"7"
+          }
+        },
+//////////////////////////////////FIN TEST
+
         {
           "type": "Feature",
           "geometry": {
@@ -1004,7 +1019,7 @@ map.on ('load', function () {
       'stops': [ [11, 4], [12, 5], [14, 6], [16, 8], [18, 12]]
       },
       //color all circles in white
-      'circle-color': "#ccc",
+      'circle-color': 'rgba(255, 255, 255, 0.6)',
       // color circles by ethnicity, using a match expression
       // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
       /*'circle-color': [
@@ -1031,15 +1046,17 @@ map.on ('load', function () {
     'type': 'circle',
     'source': 'factories',
     //'source-layer': 'original', ENCORE LA LIGNE DU DEMON
-    /*'paint':{
+    'paint':{
       'circle-radius': {
       'base': 0,
-      'stops': [[12, 3], [22, 6]]
+      'stops': [ [11, 5], [12, 6], [14, 7], [16, 9], [18, 13]]
       },
-      'circle-color':"#fff",
-    }*/
+      'circle-color':'rgba(0, 200, 255, 0.9)',
+    },
     'filter': ['in', 'teams', '']
   });
+
+//créer objet liste ici
 
   map.on('mousemove', 'factories', function(e) {
     // change mouse cursor style
@@ -1052,7 +1069,6 @@ map.on ('load', function () {
       filter: ['in','teams', feature.properties.teams]
     });
     // render found features in an overlay
-    //overlay.innerHTML = '';
     //add features that are visited by the same team to the highlighted layer
     map.setFilter ('factories-highlighted', [
       'in',
@@ -1066,16 +1082,7 @@ map.on ('load', function () {
     map.setFilter('factories-highlighted', ['in', 'teams', '']);
   });
 
- /* map.on('click', function(selectfactory){
-
-  // set bbox as 5px reactangle area around clicked point
-  var bbox = [
-  [e.point.x - 5, e.point.y - 5],
-  [e.point.x + 5, e.point.y + 5]
-  ];
-
-  var features = map.queryRenderedFeatures(bbox, {layers: ['factories']})
-  });*/
+//créer fonction 
 
 });
 
