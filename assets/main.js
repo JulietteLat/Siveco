@@ -53,7 +53,7 @@ var factories = {
           "teams":"1"
           }
         },
-/////////////////////////////////TEST FACTORY FANTOME (4e décimale long +2)
+/////////////////////////////////TEST FACTORY FANTOME VALIDE (4e décimale long +2)
         {
           "type": "Feature",
           "geometry": {
@@ -101,7 +101,7 @@ var factories = {
           "properties": {
           "nid":"197366",
           "address":"东区奕翠园4C-1泵房",
-          "teams":"3"
+          "teams":"2"
           }
         },
         {
@@ -113,7 +113,7 @@ var factories = {
           "properties": {
           "nid":"197367",
           "address":"东区比华利泵房",
-          "teams":"3"
+          "teams":"2"
           }
         },
         {
@@ -125,7 +125,7 @@ var factories = {
           "properties": {
           "nid":"197368",
           "address":"东区天奕国际泵房",
-          "teams":"3"
+          "teams":"2"
           }
         },
         {
@@ -137,7 +137,7 @@ var factories = {
           "properties": {
           "nid":"197369",
           "address":"东区品峰花园一期泵房",
-          "teams":"3"
+          "teams":"2"
           }
         },
         {
@@ -149,7 +149,7 @@ var factories = {
           "properties": {
           "nid":"197370",
           "address":"东区品峰花园二三期泵房",
-          "teams":"4"
+          "teams":"2"
           }
         },
         {
@@ -161,7 +161,7 @@ var factories = {
           "properties": {
           "nid":"197371",
           "address":"西区剑桥郡A03区泵房",
-          "teams":"4"
+          "teams":"2"
           }
         },
         {
@@ -173,7 +173,7 @@ var factories = {
           "properties": {
           "nid":"197372",
           "address":"西区剑桥郡A05区泵房",
-          "teams":"4"
+          "teams":"3"
           }
         },
         {
@@ -185,7 +185,7 @@ var factories = {
           "properties": {
           "nid":"197373",
           "address":"西区棕榈彩虹泵房",
-          "teams":"4"
+          "teams":"3"
           }
         },
         {
@@ -197,7 +197,7 @@ var factories = {
           "properties": {
           "nid":"197374",
           "address":"西区御水湾泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -209,7 +209,7 @@ var factories = {
           "properties": {
           "nid":"197375",
           "address":"南区恒大绿洲二三期泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -221,7 +221,7 @@ var factories = {
           "properties": {
           "nid":"197376",
           "address":"南区悦盈新城三期泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -233,7 +233,7 @@ var factories = {
           "properties": {
           "nid":"197377",
           "address":"南区星汇云锦三期泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -245,7 +245,7 @@ var factories = {
           "properties": {
           "nid":"197378",
           "address":"南区锦锈蓝山泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -257,7 +257,7 @@ var factories = {
           "properties": {
           "nid":"197379",
           "address":"火炬开发区万科柏悦湾二期泵房",
-          "teams":"5"
+          "teams":"3"
           }
         },
         {
@@ -269,7 +269,7 @@ var factories = {
           "properties": {
           "nid":"197380",
           "address":"火炬开发区德宝怡高泵房",
-          "teams":"6"
+          "teams":"4"
           }
         },
         {
@@ -281,7 +281,7 @@ var factories = {
           "properties": {
           "nid":"197381",
           "address":"板芙祥畔华庭泵房",
-          "teams":"6"
+          "teams":"4"
           }
         },
         {
@@ -293,7 +293,7 @@ var factories = {
           "properties": {
           "nid":"197382",
           "address":"东升君汇尚品一期泵房",
-          "teams":"6"
+          "teams":"4"
           }
         },
         {
@@ -305,7 +305,7 @@ var factories = {
           "properties": {
           "nid":"197383",
           "address":"东升君汇尚品二期泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -317,7 +317,7 @@ var factories = {
           "properties": {
           "nid":"197384",
           "address":"东凤万科金色家园二期二标段泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -329,7 +329,7 @@ var factories = {
           "properties": {
           "nid":"197385",
           "address":"东凤上水湾二期泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -341,7 +341,7 @@ var factories = {
           "properties": {
           "nid":"197386",
           "address":"古镇富都花园泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -353,7 +353,7 @@ var factories = {
           "properties": {
           "nid":"197387",
           "address":"古镇盛世嘉元泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -365,7 +365,7 @@ var factories = {
           "properties": {
           "nid":"197388",
           "address":"南头翡丽花园泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -377,7 +377,7 @@ var factories = {
           "properties": {
           "nid":"197389",
           "address":"三乡万象郡花园泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -389,7 +389,7 @@ var factories = {
           "properties": {
           "nid":"249934",
           "address":"板芙纯水岸泵房",
-          "teams":"7"
+          "teams":"5"
           }
         },
         {
@@ -401,7 +401,7 @@ var factories = {
           "properties": {
           "nid":"330925",
           "address":"石歧区璐易豪庭泵房",
-          "teams":"8"
+          "teams":"5"
           }
         },
         {
@@ -413,7 +413,7 @@ var factories = {
           "properties": {
           "nid":"330926",
           "address":"石歧区时代云图泵房",
-          "teams":"8"
+          "teams":"5"
           }
         },
         {
@@ -425,7 +425,7 @@ var factories = {
           "properties": {
           "nid":"330927",
           "address":"石歧区幸福汇泵房",
-          "teams":"8"
+          "teams":"5"
           }
         },
         {
@@ -437,7 +437,7 @@ var factories = {
           "properties": {
           "nid":"330928",
           "address":"石歧区溢彩家园泵房",
-          "teams":"8"
+          "teams":"5"
           }
         },
         {
@@ -449,7 +449,7 @@ var factories = {
           "properties": {
           "nid":"330929",
           "address":"石歧区悦享星醍泵房",
-          "teams":"8"
+          "teams":"5"
           }
         },
         {
@@ -461,7 +461,7 @@ var factories = {
           "properties": {
           "nid":"330930",
           "address":"石歧区正和中州泵房",
-          "teams":"9"
+          "teams":"5"
           }
         },
         {
@@ -473,7 +473,7 @@ var factories = {
           "properties": {
           "nid":"330931",
           "address":"石歧区时尚荟三期泵房",
-          "teams":"9"
+          "teams":"5"
           }
         },
         {
@@ -485,7 +485,7 @@ var factories = {
           "properties": {
           "nid":"330932",
           "address":"石歧区金域蓝湾一期一标泵房",
-          "teams":"9"
+          "teams":"5"
           }
         },
         {
@@ -497,7 +497,7 @@ var factories = {
           "properties": {
           "nid":"330933",
           "address":"石歧区天水湖四期泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -509,7 +509,7 @@ var factories = {
           "properties": {
           "nid":"330934",
           "address":"石岐区爱琴湾花园泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -521,7 +521,7 @@ var factories = {
           "properties": {
           "nid":"330935",
           "address":"石岐区欧雅豪庭泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -533,7 +533,7 @@ var factories = {
           "properties": {
           "nid":"330936",
           "address":"石岐区蓝钻双子座泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -545,7 +545,7 @@ var factories = {
           "properties": {
           "nid":"330937",
           "address":"石岐区宜君汇名苑泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -557,7 +557,7 @@ var factories = {
           "properties": {
           "nid":"330938",
           "address":"东区和美顺府泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -569,7 +569,7 @@ var factories = {
           "properties": {
           "nid":"330939",
           "address":"东区映翠豪庭泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -581,7 +581,7 @@ var factories = {
           "properties": {
           "nid":"330940",
           "address":"东区远洋天曜4幢泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -593,7 +593,7 @@ var factories = {
           "properties": {
           "nid":"330941",
           "address":"东区远洋天曜19幢泵房",
-          "teams":"9"
+          "teams":"6"
           }
         },
         {
@@ -605,7 +605,7 @@ var factories = {
           "properties": {
           "nid":"330942",
           "address":"东区帝璟东方泵房",
-          "teams":"10"
+          "teams":"6"
           }
         },
         {
@@ -617,7 +617,7 @@ var factories = {
           "properties": {
           "nid":"330943",
           "address":"东区紫园泵房",
-          "teams":"10"
+          "teams":"6"
           }
         },
         {
@@ -629,7 +629,7 @@ var factories = {
           "properties": {
           "nid":"330944",
           "address":"东区御峰臻品泵房",
-          "teams":"10"
+          "teams":"6"
           }
         },
         {
@@ -641,7 +641,7 @@ var factories = {
           "properties": {
           "nid":"330945",
           "address":"东区加和领御名苑泵房",
-          "teams":"10"
+          "teams":"6"
           }
         },
         {
@@ -653,7 +653,7 @@ var factories = {
           "properties": {
           "nid":"330946",
           "address":"东区上品花园泵房",
-          "teams":"10"
+          "teams":"6"
           }
         },
         {
@@ -665,7 +665,7 @@ var factories = {
           "properties": {
           "nid":"330947",
           "address":"东区花样四季泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -677,7 +677,7 @@ var factories = {
           "properties": {
           "nid":"330948",
           "address":"东区幸福天地泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -689,7 +689,7 @@ var factories = {
           "properties": {
           "nid":"330949",
           "address":"西区滨江公馆泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -701,7 +701,7 @@ var factories = {
           "properties": {
           "nid":"330950",
           "address":"西区美林春天一期泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -713,7 +713,7 @@ var factories = {
           "properties": {
           "nid":"330951",
           "address":"西区美林春天四期泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -725,7 +725,7 @@ var factories = {
           "properties": {
           "nid":"330952",
           "address":"西区水悦馨园泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -737,7 +737,7 @@ var factories = {
           "properties": {
           "nid":"330953",
           "address":"西区沁美家园泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -749,7 +749,7 @@ var factories = {
           "properties": {
           "nid":"330954",
           "address":"西区剑桥郡一区地下泵房",
-          "teams":"11"
+          "teams":"6"
           }
         },
         {
@@ -761,7 +761,7 @@ var factories = {
           "properties": {
           "nid":"330956",
           "address":"西区剑桥郡六区泵房",
-          "teams":"12"
+          "teams":"6"
           }
         },
         {
@@ -773,7 +773,7 @@ var factories = {
           "properties": {
           "nid":"330957",
           "address":"西区万好美居泵房",
-          "teams":"12"
+          "teams":"6"
           }
         },
         {
@@ -785,7 +785,7 @@ var factories = {
           "properties": {
           "nid":"330958",
           "address":"西区水悦熙园泵房",
-          "teams":"12"
+          "teams":"6"
           }
         },
         {
@@ -797,7 +797,7 @@ var factories = {
           "properties": {
           "nid":"330959",
           "address":"西区优格国际一二期泵房",
-          "teams":"12"
+          "teams":"6"
           }
         },
         {
@@ -809,7 +809,7 @@ var factories = {
           "properties": {
           "nid":"330960",
           "address":"西区花海湾一二期泵房",
-          "teams":"12"
+          "teams":"6"
           }
         },
         {
@@ -821,7 +821,7 @@ var factories = {
           "properties": {
           "nid":"330962",
           "address":"南区华俊翠苑泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -833,7 +833,7 @@ var factories = {
           "properties": {
           "nid":"330963",
           "address":"南区永安新城泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -845,7 +845,7 @@ var factories = {
           "properties": {
           "nid":"330964",
           "address":"南区星汇云锦二期泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -857,7 +857,7 @@ var factories = {
           "properties": {
           "nid":"330965",
           "address":"南区悦盈新城一期泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -869,7 +869,7 @@ var factories = {
           "properties": {
           "nid":"330966",
           "address":"南区祈安苑三期泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -881,7 +881,7 @@ var factories = {
           "properties": {
           "nid":"330967",
           "address":"南区滨河湾一二三四期泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -893,7 +893,7 @@ var factories = {
           "properties": {
           "nid":"330969",
           "address":"南区金水湾泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -905,7 +905,7 @@ var factories = {
           "properties": {
           "nid":"330970",
           "address":"南区新光天地一二期泵房",
-          "teams":"12"
+          "teams":"7"
           }
         },
         {
@@ -917,7 +917,7 @@ var factories = {
           "properties": {
           "nid":"330971",
           "address":"南区博贸大厦泵房",
-          "teams":"12"
+          "teams":"1"
           }
         },
         {
@@ -929,7 +929,7 @@ var factories = {
           "properties": {
           "nid":"330973",
           "address":"南区滨河湾五六七期泵房",
-          "teams":"12"
+          "teams":"1"
           }
         },
         {
@@ -941,7 +941,7 @@ var factories = {
           "properties": {
           "nid":"330974",
           "address":"火炬区尚城泵房",
-          "teams":"12"
+          "teams":"1"
           }
         },
         {
@@ -953,7 +953,7 @@ var factories = {
           "properties": {
           "nid":"330975",
           "address":"火炬区合生帝景苑泵房",
-          "teams":"13"
+          "teams":"1"
           }
         },
         {
@@ -965,7 +965,7 @@ var factories = {
           "properties": {
           "nid":"330978",
           "address":"火炬区聚豪园西苑泵房",
-          "teams":"13"
+          "teams":"1"
           }
         },
         {
@@ -977,11 +977,22 @@ var factories = {
           "properties": {
           "nid":"367083",
           "address":"石歧区时尚荟二期泵房",
-          "teams":"13"
+          "teams":"1"
           }
         }]
       };
   
+
+//the followig block determines colors attributed to teams
+teams_colors = {"1": '#ffffcc', 
+"2": "#c7e9b4", 
+"3": "#7fcdbb",
+"4": "#41b6c4",
+"5": "#1d91c0",
+"6": "#225ea8",
+"7": "#0c2c84"};
+
+
 
 //the following block displays mapbox map
 
@@ -990,7 +1001,7 @@ var map = new mapboxgl.Map({
   // container id
 container: 'map', 
   // stylesheet location
-style: 'mapbox://styles/juliettelat/ck3pfimbh08vs1dqy4x2ygq9a',
+style: 'mapbox://styles/juliettelat/ck3pf0oj06p9l1crutxskznmt/draft',
   // starting position [lng, lat]
 center: [113.39842, 22.51444], 
   // starting zoom
@@ -1020,17 +1031,6 @@ map.on ('load', function () {
       },
       //color all circles in white
       'circle-color': 'rgba(255, 255, 255, 0.6)',
-      // color circles by ethnicity, using a match expression
-      // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-      /*'circle-color': [
-      'match',
-      ['get', 'teams'],
-      '1', '#fbb03b',
-      '2', '#223b53',
-      '3', '#e55e5e',
-      '4', '#3bb2d0',*/
-       /*  other */ /* '#ccc'
-      ]*/
     }
   },
   );
@@ -1039,8 +1039,7 @@ map.on ('load', function () {
 //The following blocks are from the "highlight features within a bounding box" tuto
 /////////////////////////////
 
-//adds a layer that displays highlighted factories when mouseover
- 
+//adds a layer that displays highlighted factories when a factory is clicked
   map.addLayer({
     'id': 'factories-highlighted',
     'type': 'circle',
@@ -1049,37 +1048,63 @@ map.on ('load', function () {
     'paint':{
       'circle-radius': {
       'base': 0,
-      'stops': [ [11, 5], [12, 6], [14, 7], [16, 9], [18, 13]]
+      'stops': [ [11, 6], [12, 7], [14, 8], [16, 10], [18, 14]]
       },
-      'circle-color':'rgba(0, 200, 255, 0.9)',
+     // 'circle-color':'rgba(0, 200, 255, 0.9)',
+      'circle-color': [
+      'match',
+      ['get', 'teams'],
+      "1", teams_colors["1"], 
+      "2", teams_colors["2"], 
+      "3", teams_colors["3"],
+      "4", teams_colors["4"],
+      "5", teams_colors["5"],
+      "6", teams_colors["6"],
+      "7", teams_colors["7"],
+       /*  other */ 'rgba(0, 200, 255, 0.9)'
+      ]
     },
     'filter': ['in', 'teams', '']
   });
 
 //créer objet liste ici
 
-  map.on('mousemove', 'factories', function(e) {
-    // change mouse cursor style
+  map.on('mousemove', 'factories', function() {
+     // change mouse cursor style
     map.getCanvas().style.cursor = 'pointer';
-    // single out the clicked-on feature
+  });
+
+  map.on('click', 'factories', function(e) {
+    //vide le filtre précédent
+    map.setFilter('factories-highlighted', ['in', 'teams', '']);
+
+
     var feature = e.features[0];
-    // query the factories layer. Use the filter to only collect factories that are visited by the same team
-    var relatedFeatures = map.querySourceFeatures('factories',{
+    // factories.getFeatureByProperty = function(feature.properties.nid);
+    var featuresgroup = map.querySourceFeatures ('factories', {
       sourceLayer: 'factories',
-      filter: ['in','teams', feature.properties.teams]
+      filter: ['in', 'nid', feature.properties.nid]
     });
-    // render found features in an overlay
-    //add features that are visited by the same team to the highlighted layer
-    map.setFilter ('factories-highlighted', [
-      'in',
-      'teams',
-      feature.properties.teams
-    ]);
+
+    map.setFilter ('factories-highlighted', ['in', 'teams', feature.properties.nid]
+    );
+   
+    // Run through the selected features and set a filter
+    // to match features with unique teams codes to activate
+    // the `factories-highlighted` layer.
+    var filter = featuresgroup.reduce(
+      function(memo, feature) {
+      memo.push(feature.properties.teams);
+      return memo;
+      },
+    ['in', 'teams']
+    );
+
+    map.setFilter('factories-highlighted', filter);
   });
 
   map.on('mouseleave', 'factories', function() {
     map.getCanvas().style.cursor = '';
-    map.setFilter('factories-highlighted', ['in', 'teams', '']);
   });
 
 //créer fonction 
