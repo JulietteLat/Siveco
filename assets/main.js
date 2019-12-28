@@ -1112,16 +1112,37 @@ var popup = new mapboxgl.Popup({
   closeButton: false
 });
  
-var teamslist = document.getElementById('feature-listing');
+var listingEl = document.getElementById('teams-listing');
  
-function renderListings(features) {
+function renderListings (features) {
   // Clear any existing listings
-  teamslist.innerHTML = '';
+  listingEl.innerHTML = '';
   if (features.length) {
-    features.forEach(function(feature) {
+    features.forEach(function(feature, index) {
+      //console.log(index); permet de voir dans la console les valeurs que prend index
       var prop = feature.properties;
-      var item = document.createElement('a');
-          item.textContent = prop.nid + ': team ' + prop.teams;
+      if (index == 0) {
+        var item = document.createElement('a');
+            item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
+            item.setAttribute ('nid', prop.nid);
+            item.textContent = prop.nid + ': team ' + prop.teams;
+      }
+      else {
+        //console.log(index-1);
+        if (prop.nid == features[index-1].properties.nid ) { 
+          var item = document.createElement('a');
+              item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
+              item.setAttribute ('nid', prop.nid);
+              item.textContent =  '______ team ' + prop.teams;
+        }
+        else { 
+          var item = document.createElement('a');
+              item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
+              item.setAttribute ('nid', prop.nid);
+              item.textContent = prop.nid + ': team ' + prop.teams;
+              nemonid = prop.nid;
+        }
+      }
       item.addEventListener('click', function() {
         //vide le filtre précédent
         map.setFilter('factories-highlighted', ['in', 'teams', '']);
@@ -1149,7 +1170,7 @@ function renderListings(features) {
           .setText(prop.nid + ': team' + prop.teams)
           .addTo(map);
         });
-      teamslist.appendChild(item);
+      listingEl.appendChild(item);
     });
   }
 }
