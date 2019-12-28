@@ -53,7 +53,7 @@ var factories = {
           "teams":"1"
           }
         },
-/////////////////////////////////TEST FACTORY FANTOME VALIDE (4e décimale long +2)
+  /////////////////////////////////TEST FACTORY FANTOME VALIDE (4e décimale long +2)
         {
           "type": "Feature",
           "geometry": {
@@ -66,7 +66,7 @@ var factories = {
           "teams":"7"
           }
         },
-//////////////////////////////////FIN TEST
+  //////////////////////////////////FIN TEST
 
         {
           "type": "Feature",
@@ -984,13 +984,13 @@ var factories = {
   
 
 //the followig block determines colors attributed to teams
-teams_colors = {"1": '#ffffcc', 
-"2": "#c7e9b4", 
-"3": "#7fcdbb",
-"4": "#41b6c4",
-"5": "#1d91c0",
-"6": "#225ea8",
-"7": "#0c2c84"};
+teams_colors = {"1": 'rgba(94,170,188,0.8)', 
+"2": "rgba(98,97,148,0.8)", 
+"3": "rgba(182,162,217,0.8)",
+"4": "rgba(94,161,215,0.8)",
+"5": "rgba(83,202,191,0.8)",
+"6": "rgba(116,112,206,0.8)",
+"7": "rgba(125,81,221,0.8)"};
 
 
 
@@ -1067,18 +1067,15 @@ map.on ('load', function () {
     'filter': ['in', 'teams', '']
   });
 
-//créer objet liste ici
-
   map.on('mousemove', 'factories', function() {
      // change mouse cursor style
     map.getCanvas().style.cursor = 'pointer';
   });
 
+  //highlights factories that are visited by the same teams than the clicked point on the map
   map.on('click', 'factories', function(e) {
     //vide le filtre précédent
     map.setFilter('factories-highlighted', ['in', 'teams', '']);
-
-
     var feature = e.features[0];
     // factories.getFeatureByProperty = function(feature.properties.nid);
     var featuresgroup = map.querySourceFeatures ('factories', {
@@ -1107,8 +1104,61 @@ map.on ('load', function () {
     map.getCanvas().style.cursor = '';
   });
 
-//créer fonction 
 
+///////////////INTERACTIVE LIST/////////////////////////////////////////////////////////////////////////////////////
+
+// Create a popup, but don't add it to the map yet.
+var popup = new mapboxgl.Popup({
+  closeButton: false
+});
+ 
+var teamslist = document.getElementById('feature-listing');
+ 
+function renderListings(features) {
+  // Clear any existing listings
+  teamslist.innerHTML = '';
+  if (features.length) {
+    features.forEach(function(feature) {
+      var prop = feature.properties;
+      var item = document.createElement('a');
+          item.textContent = prop.nid + ': team ' + prop.teams;
+      item.addEventListener('click', function() {
+        //vide le filtre précédent
+        map.setFilter('factories-highlighted', ['in', 'teams', '']);
+        // factories.getFeatureByProperty = function(feature.properties.nid);
+        var featuresgroup = map.querySourceFeatures ('factories', {
+          sourceLayer: 'factories',
+          filter: ['in', 'nid', feature.properties.nid]
+        });
+        map.setFilter ('factories-highlighted', ['in', 'teams', feature.properties.nid]
+        );
+        // Run through the selected features and set a filter
+        // to match features with unique teams codes to activate
+        // the `factories-highlighted` layer.
+        var filter = featuresgroup.reduce(
+          function(memo, feature) {
+            memo.push(feature.properties.teams);
+            return memo;
+          },
+          ['in', 'teams']
+        );
+        map.setFilter('factories-highlighted', filter);
+        //Displays POPUP when mouse clicks a list element
+        popup
+          .setLngLat(feature.geometry.coordinates)
+          .setText(prop.nid + ': team' + prop.teams)
+          .addTo(map);
+        });
+      teamslist.appendChild(item);
+    });
+  }
+}
+ 
+  map.on('click', function() {
+    var features = map.queryRenderedFeatures({ layers: ['factories'] });
+    //Populate features for the listing overlay.
+    renderListings(features);
+  });
 });
 
 
