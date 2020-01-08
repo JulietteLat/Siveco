@@ -14,38 +14,94 @@ background-color: rgba(255, 255, 255, 0.6);
 .button{
 display: block;
 position: absolute;
-bottom: 95%;
 height: 5%;
-width: 15%;
+width: 20%;
+left:85%;
+background: rgba(255, 255, 255, 0.6);
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-	.button h2:hover {
+	.button:hover {
 	background: rgba(255, 255, 255, 0.8);
-	
+	cursor: pointer;
 	}
+ 	
+ 	.button h3 {
+ 	padding-top: 0%;
+ 	}
 
 	#button-current {
-	left: 35%;
+	bottom: 85%;
 	}
 
 	#button-algo {
-	left: 50%;
+	bottom: 80%;
 	}
 
-h2 {
-	vertical-align: bottom;
-	text-align: center;	
-	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-		background: rgba(255, 255, 255, 0.6);
+h1 {
+font: 14px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font-weight: bold;
+text-align: center;	
 }
+
+h2 {
+font: 14px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+text-align: center;	
+margin-top: -1%;
+}
+
+h3 {
+vertical-align: top;
+text-align: center;	
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font-weight: bold;
+margin-right: 25%;
+padding-top: 2%;
+}
+
+p{
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+margin-top: -6%;
+text-align: center;
+margin-right: 25%;
+}
+
+
+
+.titlebox {
+position: absolute;
+width: 100%;
+top: 0;
+bottom: 90%;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+background-color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel {
+display: block;
+position: absolute;
+top: 20%;
+bottom: 0;
+width: 20%;
+left:85%;
+background: rgba(255, 255, 255, 0.6);
+border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+	.info-panel .info-panel-title{
+	padding-left: 0;
+	}
 
 .map-overlay {
 position: absolute;
 width: 15%;
-top: 0;
+top: 10%;
 bottom: 0;
 left: 0;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+border-right: 1px solid rgba(0, 0, 0, 0.1);
 background-color: rgba(255, 255, 255, 0.6);
 max-height: 100%;
 overflow: hidden;
@@ -91,13 +147,14 @@ overflow: hidden;
 	 
 	.map-overlay .listing a:hover {
 	background: rgba(255, 255, 255, 0.8);
+	cursor: pointer;
 	}
 
 .factories-menu {
 display: none;
 position: absolute;
 width: 15%;
-top: 0;
+top: 10%;
 bottom: 0;
 left: 15%;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -138,6 +195,7 @@ overflow: hidden;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	color: #404;
 	text-decoration: none;
+	cursor: pointer;
 	}
 	 
 	.factories-menu .listing a:last-child {
@@ -146,5 +204,11 @@ overflow: hidden;
 	 
 	.factories-menu .listing a:hover {
 	background: rgba(255, 255, 255, 0.8);
+
+	}
+
+	.factories-menu .listing a:clicked {
+	background: rgba(255, 255, 255, 0.8);
+
 	}
 

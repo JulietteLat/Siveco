@@ -10,17 +10,52 @@
 
     <body>
         <div id='map'></div>   
+        <div class='titlebox'> 
+            <h1> Zhongshan Water (ZW) maintenance team's posting optimization </h1>
+            <h2> Interactive map of ZW's pumps in Zongshan city in 2020 with teams posting by ZW or optimization algorithm. </h2>
+        </div>
         <div id="button-algo" class="button">
-            <h2> Optimized postings</h2>
+            <h3> Optimized postings</h3>
         </div>
         <div id="button-current" class="button">
-            <h2> Current postings</h2>
+            <h3> Current postings</h3>
         </div>
         <div class="map-overlay">
             <div id="teams-listing" class="listing"></div>
         </div>
         <div class="factories-menu">
             <div id="factories-listing" class="listing"></div>
+        </div>
+        <div class="info-panel"> 
+            <h3 class='info-panel-title'> General information </h3>
+                <p>Number of teams:</p>
+                <p id='nb-of-teams'></p>
+                <p>Number of factories:</p>
+                <P id='nb-of-factories'></P>
+                <p>Number of unassigned factories:</p>
+                <p id='nb-of-unvisited-factories'></p>
+                <p>Total working load</p>
+                <p id='total-working-load'></p>
+
+            <h3 class='info-panel-title'> Factory information </h3>
+                <p>Database factory nid:</p>
+                <p id='nid'></p>
+                <p>Factory address:</p>
+                <p id='address'></p>
+                <p>Number of assigned teams:</p>
+                <p id='nb-of-teams-visiting'></p>
+                <p>Assigned teams' nid:</p>
+                <p id='visiting-team-nid'></p>
+                <p>Working load of the factory:</p>
+                <p id='inner-working-load'></p>
+                <p>Work load per team:</p>
+                <p id='fact-team-working-load'></p>
+                
+            <h3 class='info-panel-title'> Team information </h3>
+                <p>Database team nid:</p>
+                <p id='team-nid'></p>
+                <p>Total-work load of the team:</p>
+                <p id='total-team-working-load'></p>
         </div>
 <script src="assets/main.js"></script>
     </body>
