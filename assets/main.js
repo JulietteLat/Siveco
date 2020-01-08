@@ -1,1185 +1,2091 @@
 //SIVECO
-//singularité
 mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWV0dGVsYXQiLCJhIjoiY2szNDFleWJzMHNjOTNtczJrc3pwMjR5bCJ9.IvgBC4cXDgWfBYunhdqh5w';
 
-//the following block gives the geojson file's features
-var factories = {
-      "type": "FeatureCollection",
-      "features": [{
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.39842, 22.51444 ]
-          },
-          "properties": {
-          "nid":"origin",
-          "address":"NA",
-          "teams":"NA"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.389911,22.516515 ]
-          },
-          "properties": {
-          "nid":"197361",
-          "address":"石歧区万丽豪庭泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.37008,22.509586 ]
-          },
-          "properties": {
-          "nid":"197362",
-          "address":"石歧区利和豪庭一区泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.385329,22.557079 ]
-          },
-          "properties": {
-          "nid":"197363",
-          "address":"石歧区中海锦城泵房",
-          "teams":"1"
-          }
-        },
-  /////////////////////////////////TEST FACTORY FANTOME VALIDE (4e décimale long +2)
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.385529,22.557079 ]
-          },
-          "properties": {
-          "nid":"197363",
-          "address":"石歧区中海锦城泵房",
-          "teams":"7"
-          }
-        },
-  //////////////////////////////////FIN TEST
-
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.397331,22.541959 ]
-          },
-          "properties": {
-          "nid":"197364",
-          "address":"石歧区雅尚花园泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.42157,22.520277 ]
-          },
-          "properties": {
-          "nid":"197365",
-          "address":"东区紫岭国际一期泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.413154,22.522315 ]
-          },
-          "properties": {
-          "nid":"197366",
-          "address":"东区奕翠园4C-1泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.412912,22.532338 ]
-          },
-          "properties": {
-          "nid":"197367",
-          "address":"东区比华利泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.426321,22.52564 ]
-          },
-          "properties": {
-          "nid":"197368",
-          "address":"东区天奕国际泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.43696,22.513043 ]
-          },
-          "properties": {
-          "nid":"197369",
-          "address":"东区品峰花园一期泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.439423,22.513377 ]
-          },
-          "properties": {
-          "nid":"197370",
-          "address":"东区品峰花园二三期泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.354422,22.515466 ]
-          },
-          "properties": {
-          "nid":"197371",
-          "address":"西区剑桥郡A03区泵房",
-          "teams":"2"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.353492,22.517992 ]
-          },
-          "properties": {
-          "nid":"197372",
-          "address":"西区剑桥郡A05区泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.356932,22.546358 ]
-          },
-          "properties": {
-          "nid":"197373",
-          "address":"西区棕榈彩虹泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.361458,22.541661 ]
-          },
-          "properties": {
-          "nid":"197374",
-          "address":"西区御水湾泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.375505,22.501189 ]
-          },
-          "properties": {
-          "nid":"197375",
-          "address":"南区恒大绿洲二三期泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.370533,22.493307 ]
-          },
-          "properties": {
-          "nid":"197376",
-          "address":"南区悦盈新城三期泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.366524,22.487747 ]
-          },
-          "properties": {
-          "nid":"197377",
-          "address":"南区星汇云锦三期泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.367099,22.478767 ]
-          },
-          "properties": {
-          "nid":"197378",
-          "address":"南区锦锈蓝山泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.458969,22.5176 ]
-          },
-          "properties": {
-          "nid":"197379",
-          "address":"火炬开发区万科柏悦湾二期泵房",
-          "teams":"3"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.440958,22.525391 ]
-          },
-          "properties": {
-          "nid":"197380",
-          "address":"火炬开发区德宝怡高泵房",
-          "teams":"4"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.32456,22.420834 ]
-          },
-          "properties": {
-          "nid":"197381",
-          "address":"板芙祥畔华庭泵房",
-          "teams":"4"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.304946,22.616003 ]
-          },
-          "properties": {
-          "nid":"197382",
-          "address":"东升君汇尚品一期泵房",
-          "teams":"4"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.303676,22.617108 ]
-          },
-          "properties": {
-          "nid":"197383",
-          "address":"东升君汇尚品二期泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.261396,22.711603 ]
-          },
-          "properties": {
-          "nid":"197384",
-          "address":"东凤万科金色家园二期二标段泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.258406,22.688569 ]
-          },
-          "properties": {
-          "nid":"197385",
-          "address":"东凤上水湾二期泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.210212,22.642108 ]
-          },
-          "properties": {
-          "nid":"197386",
-          "address":"古镇富都花园泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.214201,22.649341 ]
-          },
-          "properties": {
-          "nid":"197387",
-          "address":"古镇盛世嘉元泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.303867,22.714782 ]
-          },
-          "properties": {
-          "nid":"197388",
-          "address":"南头翡丽花园泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.46742,22.339452 ]
-          },
-          "properties": {
-          "nid":"197389",
-          "address":"三乡万象郡花园泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.331531,22.393117 ]
-          },
-          "properties": {
-          "nid":"249934",
-          "address":"板芙纯水岸泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.390119,22.559391 ]
-          },
-          "properties": {
-          "nid":"330925",
-          "address":"石歧区璐易豪庭泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.403992,22.553931 ]
-          },
-          "properties": {
-          "nid":"330926",
-          "address":"石歧区时代云图泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.369689,22.551344 ]
-          },
-          "properties": {
-          "nid":"330927",
-          "address":"石歧区幸福汇泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.399608,22.536482 ]
-          },
-          "properties": {
-          "nid":"330928",
-          "address":"石歧区溢彩家园泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.402147,22.544501 ]
-          },
-          "properties": {
-          "nid":"330929",
-          "address":"石歧区悦享星醍泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.377185,22.508477 ]
-          },
-          "properties": {
-          "nid":"330930",
-          "address":"石歧区正和中州泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.376396,22.55201 ]
-          },
-          "properties": {
-          "nid":"330931",
-          "address":"石歧区时尚荟三期泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.375991,22.544239 ]
-          },
-          "properties": {
-          "nid":"330932",
-          "address":"石歧区金域蓝湾一期一标泵房",
-          "teams":"5"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.402994,22.562639 ]
-          },
-          "properties": {
-          "nid":"330933",
-          "address":"石歧区天水湖四期泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.403658,22.561128 ]
-          },
-          "properties": {
-          "nid":"330934",
-          "address":"石岐区爱琴湾花园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.370426,22.513229 ]
-          },
-          "properties": {
-          "nid":"330935",
-          "address":"石岐区欧雅豪庭泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.375164,22.509915 ]
-          },
-          "properties": {
-          "nid":"330936",
-          "address":"石岐区蓝钻双子座泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.370296,22.549457 ]
-          },
-          "properties": {
-          "nid":"330937",
-          "address":"石岐区宜君汇名苑泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.416794,22.527527 ]
-          },
-          "properties": {
-          "nid":"330938",
-          "address":"东区和美顺府泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.376439,22.503142 ]
-          },
-          "properties": {
-          "nid":"330939",
-          "address":"东区映翠豪庭泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.4336,22.50519 ]
-          },
-          "properties": {
-          "nid":"330940",
-          "address":"东区远洋天曜4幢泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.435854,22.504831 ]
-          },
-          "properties": {
-          "nid":"330941",
-          "address":"东区远洋天曜19幢泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.416199,22.506047 ]
-          },
-          "properties": {
-          "nid":"330942",
-          "address":"东区帝璟东方泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.432297,22.517758 ]
-          },
-          "properties": {
-          "nid":"330943",
-          "address":"东区紫园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.43323,22.508342 ]
-          },
-          "properties": {
-          "nid":"330944",
-          "address":"东区御峰臻品泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.40724,22.542584 ]
-          },
-          "properties": {
-          "nid":"330945",
-          "address":"东区加和领御名苑泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.40762,22.547184 ]
-          },
-          "properties": {
-          "nid":"330946",
-          "address":"东区上品花园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.411437,22.540141 ]
-          },
-          "properties": {
-          "nid":"330947",
-          "address":"东区花样四季泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.377756,22.505842 ]
-          },
-          "properties": {
-          "nid":"330948",
-          "address":"东区幸福天地泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.368723,22.540675 ]
-          },
-          "properties": {
-          "nid":"330949",
-          "address":"西区滨江公馆泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.375843,22.554129 ]
-          },
-          "properties": {
-          "nid":"330950",
-          "address":"西区美林春天一期泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.374591,22.553853 ]
-          },
-          "properties": {
-          "nid":"330951",
-          "address":"西区美林春天四期泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.355869,22.541343 ]
-          },
-          "properties": {
-          "nid":"330952",
-          "address":"西区水悦馨园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.364614,22.549125 ]
-          },
-          "properties": {
-          "nid":"330953",
-          "address":"西区沁美家园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.35587,22.517909 ]
-          },
-          "properties": {
-          "nid":"330954",
-          "address":"西区剑桥郡一区地下泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.354293,22.520421 ]
-          },
-          "properties": {
-          "nid":"330956",
-          "address":"西区剑桥郡六区泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.362431,22.519384 ]
-          },
-          "properties": {
-          "nid":"330957",
-          "address":"西区万好美居泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.358295,22.539625 ]
-          },
-          "properties": {
-          "nid":"330958",
-          "address":"西区水悦熙园泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.355119,22.543449 ]
-          },
-          "properties": {
-          "nid":"330959",
-          "address":"西区优格国际一二期泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.370254,22.54625 ]
-          },
-          "properties": {
-          "nid":"330960",
-          "address":"西区花海湾一二期泵房",
-          "teams":"6"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.357301,22.485119 ]
-          },
-          "properties": {
-          "nid":"330962",
-          "address":"南区华俊翠苑泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.365758,22.490336 ]
-          },
-          "properties": {
-          "nid":"330963",
-          "address":"南区永安新城泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.36708,22.489683 ]
-          },
-          "properties": {
-          "nid":"330964",
-          "address":"南区星汇云锦二期泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.373629,22.496089 ]
-          },
-          "properties": {
-          "nid":"330965",
-          "address":"南区悦盈新城一期泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.374666,22.499024 ]
-          },
-          "properties": {
-          "nid":"330966",
-          "address":"南区祈安苑三期泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.371193,22.506306 ]
-          },
-          "properties": {
-          "nid":"330967",
-          "address":"南区滨河湾一二三四期泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.362174,22.500012 ]
-          },
-          "properties": {
-          "nid":"330969",
-          "address":"南区金水湾泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.352,22.4584 ]
-          },
-          "properties": {
-          "nid":"330970",
-          "address":"南区新光天地一二期泵房",
-          "teams":"7"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.360234,22.492065 ]
-          },
-          "properties": {
-          "nid":"330971",
-          "address":"南区博贸大厦泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.368328,22.505713 ]
-          },
-          "properties": {
-          "nid":"330973",
-          "address":"南区滨河湾五六七期泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.43494,22.535997 ]
-          },
-          "properties": {
-          "nid":"330974",
-          "address":"火炬区尚城泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.371258,22.478039 ]
-          },
-          "properties": {
-          "nid":"330975",
-          "address":"火炬区合生帝景苑泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.450846,22.51568 ]
-          },
-          "properties": {
-          "nid":"330978",
-          "address":"火炬区聚豪园西苑泵房",
-          "teams":"1"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-             "type": "Point",
-             "coordinates":  [ 113.375794,22.55114 ]
-          },
-          "properties": {
-          "nid":"367083",
-          "address":"石歧区时尚荟二期泵房",
-          "teams":"1"
-          }
-        }]
-      };
-  
-
-//the followig block determines colors attributed to teams
-teams_colors = {"1": 'rgba(94,170,188,0.8)', 
-"2": "rgba(98,97,148,0.8)", 
-"3": "rgba(182,162,217,0.8)",
-"4": "rgba(94,161,215,0.8)",
-"5": "rgba(83,202,191,0.8)",
-"6": "rgba(116,112,206,0.8)",
-"7": "rgba(125,81,221,0.8)"};
-
-
-
-//the following block displays mapbox map
-
-  //Sets up mapbox map
-var map = new mapboxgl.Map({
-  // container id
-container: 'map', 
-  // stylesheet location
-style: 'mapbox://styles/juliettelat/ck3pf0oj06p9l1crutxskznmt/draft',
-  // starting position [lng, lat]
-center: [113.39842, 22.51444], 
-  // starting zoom
-zoom: 10.5
-});
- 
-
-
-map.on ('load', function () {
-
-  map.addSource('factories', {
-      "type": "geojson",
-      "data": factories
-  });
-
-
-  map.addLayer({
-    'id':'factories',
-    'type': 'circle',
-    'source': 'factories',
-    //'source-layer': 'original', CETTE LIGNE FAIT BUGUER
-    'paint': {
-      // make circles larger as the user zooms from z12 to z22
-      'circle-radius': {
-      'base': 0,
-      'stops': [ [11, 4], [12, 5], [14, 6], [16, 8], [18, 12]]
-      },
-      //color all circles in white
-      'circle-color': 'rgba(255, 255, 255, 0.6)',
+//current teams affectations geojson file
+  var current_factories = {
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.46742,22.339452 ]
+    },
+    "properties": {
+    "indice":1,
+    "nid":197389,
+    "team_nid":197428,
+    "team_indice":6
     }
   },
-  );
-
-/////////////////////////////
-//The following blocks are from the "highlight features within a bounding box" tuto
-/////////////////////////////
-
-//adds a layer that displays highlighted factories when a factory is clicked
-  map.addLayer({
-    'id': 'factories-highlighted',
-    'type': 'circle',
-    'source': 'factories',
-    //'source-layer': 'original', ENCORE LA LIGNE DU DEMON
-    'paint':{
-      'circle-radius': {
-      'base': 0,
-      'stops': [ [11, 6], [12, 7], [14, 8], [16, 10], [18, 14]]
-      },
-     // 'circle-color':'rgba(0, 200, 255, 0.9)',
-      'circle-color': [
-      'match',
-      ['get', 'teams'],
-      "1", teams_colors["1"], 
-      "2", teams_colors["2"], 
-      "3", teams_colors["3"],
-      "4", teams_colors["4"],
-      "5", teams_colors["5"],
-      "6", teams_colors["6"],
-      "7", teams_colors["7"],
-       /*  other */ 'rgba(0, 200, 255, 0.9)'
-      ]
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.210212,22.642108 ]
     },
-    'filter': ['in', 'teams', '']
-  });
-
-  map.on('mousemove', 'factories', function() {
-     // change mouse cursor style
-    map.getCanvas().style.cursor = 'pointer';
-  });
-
-  //highlights factories that are visited by the same teams than the clicked point on the map
-  map.on('click', 'factories', function(e) {
-    //vide le filtre précédent
-    map.setFilter('factories-highlighted', ['in', 'teams', '']);
-    var feature = e.features[0];
-    // factories.getFeatureByProperty = function(feature.properties.nid);
-    var featuresgroup = map.querySourceFeatures ('factories', {
-      sourceLayer: 'factories',
-      filter: ['in', 'nid', feature.properties.nid]
-    });
-
-    map.setFilter ('factories-highlighted', ['in', 'teams', feature.properties.nid]
-    );
-   
-    // Run through the selected features and set a filter
-    // to match features with unique teams codes to activate
-    // the `factories-highlighted` layer.
-    var filter = featuresgroup.reduce(
-      function(memo, feature) {
-      memo.push(feature.properties.teams);
-      return memo;
-      },
-    ['in', 'teams']
-    );
-
-    map.setFilter('factories-highlighted', filter);
-  });
-
-  map.on('mouseleave', 'factories', function() {
-    map.getCanvas().style.cursor = '';
-  });
-
-
-///////////////INTERACTIVE LIST/////////////////////////////////////////////////////////////////////////////////////
-
-// Create a popup, but don't add it to the map yet.
-var popup = new mapboxgl.Popup({
-  closeButton: false
-});
- 
-var listingEl = document.getElementById('teams-listing');
- 
-function renderListings (features) {
-  // Clear any existing listings
-  listingEl.innerHTML = '';
-  if (features.length) {
-    features.forEach(function(feature, index) {
-      //console.log(index); permet de voir dans la console les valeurs que prend index
-      var prop = feature.properties;
-      if (index == 0) {
-        var item = document.createElement('a');
-            item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
-            item.setAttribute ('nid', prop.nid);
-            item.textContent = prop.nid + ': team ' + prop.teams;
-      }
-      else {
-        //console.log(index-1);
-        if (prop.nid == features[index-1].properties.nid ) { 
-          var item = document.createElement('a');
-              item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
-              item.setAttribute ('nid', prop.nid);
-              item.textContent =  '______ team ' + prop.teams;
-        }
-        else { 
-          var item = document.createElement('a');
-              item.setAttribute ('team', prop.teams); //si on écrit "class" au lieu de "team", ça crée une classe, et non un attribut personnalisé
-              item.setAttribute ('nid', prop.nid);
-              item.textContent = prop.nid + ': team ' + prop.teams;
-              nemonid = prop.nid;
-        }
-      }
-      item.addEventListener('click', function() {
-        //vide le filtre précédent
-        map.setFilter('factories-highlighted', ['in', 'teams', '']);
-        // factories.getFeatureByProperty = function(feature.properties.nid);
-        var featuresgroup = map.querySourceFeatures ('factories', {
-          sourceLayer: 'factories',
-          filter: ['in', 'nid', feature.properties.nid]
-        });
-        map.setFilter ('factories-highlighted', ['in', 'teams', feature.properties.nid]
-        );
-        // Run through the selected features and set a filter
-        // to match features with unique teams codes to activate
-        // the `factories-highlighted` layer.
-        var filter = featuresgroup.reduce(
-          function(memo, feature) {
-            memo.push(feature.properties.teams);
-            return memo;
-          },
-          ['in', 'teams']
-        );
-        map.setFilter('factories-highlighted', filter);
-        //Displays POPUP when mouse clicks a list element
-        popup
-          .setLngLat(feature.geometry.coordinates)
-          .setText(prop.nid + ': team' + prop.teams)
-          .addTo(map);
-        });
-      listingEl.appendChild(item);
-    });
+    "properties": {
+    "indice":2,
+    "nid":197386,
+    "team_nid":197425,
+    "team_indice":5
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.214201,22.649341 ]
+    },
+    "properties": {
+    "indice":3,
+    "nid":197387,
+    "team_nid":197425,
+    "team_indice":5
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.261396,22.711603 ]
+    },
+    "properties": {
+    "indice":4,
+    "nid":197384,
+    "team_nid":197424,
+    "team_indice":4
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.258406,22.688569 ]
+    },
+    "properties": {
+    "indice":5,
+    "nid":197385,
+    "team_nid":197424,
+    "team_indice":4
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.304946,22.616003 ]
+    },
+    "properties": {
+    "indice":6,
+    "nid":197382,
+    "team_nid":197423,
+    "team_indice":3
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.303676,22.617108 ]
+    },
+    "properties": {
+    "indice":7,
+    "nid":197383,
+    "team_nid":197423,
+    "team_indice":3
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.32456,22.420834 ]
+    },
+    "properties": {
+    "indice":8,
+    "nid":197381,
+    "team_nid":197422,
+    "team_indice":2
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.331531,22.393117 ]
+    },
+    "properties": {
+    "indice":9,
+    "nid":249934,
+    "team_nid":197422,
+    "team_indice":2
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.368723,22.540675 ]
+    },
+    "properties": {
+    "indice":10,
+    "nid":330949,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.377756,22.505842 ]
+    },
+    "properties": {
+    "indice":11,
+    "nid":330948,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.358295,22.539625 ]
+    },
+    "properties": {
+    "indice":12,
+    "nid":330958,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.355869,22.541343 ]
+    },
+    "properties": {
+    "indice":13,
+    "nid":330952,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.411437,22.540141 ]
+    },
+    "properties": {
+    "indice":14,
+    "nid":330947,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.416199,22.506047 ]
+    },
+    "properties": {
+    "indice":15,
+    "nid":330942,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.376439,22.503142 ]
+    },
+    "properties": {
+    "indice":16,
+    "nid":330939,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.40762,22.547184 ]
+    },
+    "properties": {
+    "indice":17,
+    "nid":330946,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.40724,22.542584 ]
+    },
+    "properties": {
+    "indice":18,
+    "nid":330945,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.355119,22.543449 ]
+    },
+    "properties": {
+    "indice":19,
+    "nid":330959,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.371258,22.478039 ]
+    },
+    "properties": {
+    "indice":20,
+    "nid":330975,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43494,22.535997 ]
+    },
+    "properties": {
+    "indice":21,
+    "nid":330974,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375794,22.55114 ]
+    },
+    "properties": {
+    "indice":22,
+    "nid":367083,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.450846,22.51568 ]
+    },
+    "properties": {
+    "indice":23,
+    "nid":330978,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.352,22.4584 ]
+    },
+    "properties": {
+    "indice":24,
+    "nid":330970,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.365758,22.490336 ]
+    },
+    "properties": {
+    "indice":25,
+    "nid":330963,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370254,22.54625 ]
+    },
+    "properties": {
+    "indice":26,
+    "nid":330960,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.374666,22.499024 ]
+    },
+    "properties": {
+    "indice":27,
+    "nid":330966,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.373629,22.496089 ]
+    },
+    "properties": {
+    "indice":28,
+    "nid":330965,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.354422,22.515466 ]
+    },
+    "properties": {
+    "indice":29,
+    "nid":197371,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.439423,22.513377 ]
+    },
+    "properties": {
+    "indice":30,
+    "nid":197370,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43696,22.513043 ]
+    },
+    "properties": {
+    "indice":31,
+    "nid":197369,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.353492,22.517992 ]
+    },
+    "properties": {
+    "indice":32,
+    "nid":197372,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375505,22.501189 ]
+    },
+    "properties": {
+    "indice":33,
+    "nid":197375,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.361458,22.541661 ]
+    },
+    "properties": {
+    "indice":34,
+    "nid":197374,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.356932,22.546358 ]
+    },
+    "properties": {
+    "indice":35,
+    "nid":197373,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.397331,22.541959 ]
+    },
+    "properties": {
+    "indice":36,
+    "nid":197364,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.385329,22.557079 ]
+    },
+    "properties": {
+    "indice":37,
+    "nid":197363,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.37008,22.509586 ]
+    },
+    "properties": {
+    "indice":38,
+    "nid":197362,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.42157,22.520277 ]
+    },
+    "properties": {
+    "indice":39,
+    "nid":197365,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.426321,22.52564 ]
+    },
+    "properties": {
+    "indice":40,
+    "nid":197368,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.412912,22.532338 ]
+    },
+    "properties": {
+    "indice":41,
+    "nid":197367,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.413154,22.522315 ]
+    },
+    "properties": {
+    "indice":42,
+    "nid":197366,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.376396,22.55201 ]
+    },
+    "properties": {
+    "indice":43,
+    "nid":330931,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.402147,22.544501 ]
+    },
+    "properties": {
+    "indice":44,
+    "nid":330929,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.399608,22.536482 ]
+    },
+    "properties": {
+    "indice":45,
+    "nid":330928,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370426,22.513229 ]
+    },
+    "properties": {
+    "indice":46,
+    "nid":330935,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.416794,22.527527 ]
+    },
+    "properties": {
+    "indice":47,
+    "nid":330938,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370296,22.549457 ]
+    },
+    "properties": {
+    "indice":48,
+    "nid":330937,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375164,22.509915 ]
+    },
+    "properties": {
+    "indice":49,
+    "nid":330936,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.367099,22.478767 ]
+    },
+    "properties": {
+    "indice":50,
+    "nid":197378,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.366524,22.487747 ]
+    },
+    "properties": {
+    "indice":51,
+    "nid":197377,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370533,22.493307 ]
+    },
+    "properties": {
+    "indice":52,
+    "nid":197376,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.458969,22.5176 ]
+    },
+    "properties": {
+    "indice":53,
+    "nid":197379,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.369689,22.551344 ]
+    },
+    "properties": {
+    "indice":54,
+    "nid":330927,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.403992,22.553931 ]
+    },
+    "properties": {
+    "indice":55,
+    "nid":330926,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.440958,22.525391 ]
+    },
+    "properties": {
+    "indice":56,
+    "nid":197380,
+    "team_nid":197421,
+    "team_indice":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.371193,22.506306 ]
+    },
+    "properties": {
+    "indice":57,
+    "nid":330967,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.357301,22.485119 ]
+    },
+    "properties": {
+    "indice":58,
+    "nid":330962,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.362431,22.519384 ]
+    },
+    "properties": {
+    "indice":59,
+    "nid":330957,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.368328,22.505713 ]
+    },
+    "properties": {
+    "indice":60,
+    "nid":330973,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.360234,22.492065 ]
+    },
+    "properties": {
+    "indice":61,
+    "nid":330971,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.362174,22.500012 ]
+    },
+    "properties": {
+    "indice":62,
+    "nid":330969,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.364614,22.549125 ]
+    },
+    "properties": {
+    "indice":63,
+    "nid":330953,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.435854,22.504831 ]
+    },
+    "properties": {
+    "indice":64,
+    "nid":330941,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.4336,22.50519 ]
+    },
+    "properties": {
+    "indice":65,
+    "nid":330940,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375991,22.544239 ]
+    },
+    "properties": {
+    "indice":66,
+    "nid":330932,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.374591,22.553853 ]
+    },
+    "properties": {
+    "indice":67,
+    "nid":330951,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375843,22.554129 ]
+    },
+    "properties": {
+    "indice":68,
+    "nid":330950,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43323,22.508342 ]
+    },
+    "properties": {
+    "indice":69,
+    "nid":330944,
+    "team_nid":0,
+    "team_indice":0
+    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+        "type": "Point",
+        "coordinates":  [ 113.39842, 22.51444 ]
+    },
+    "properties": {
+    "indice":70,
+    "nid":"origin",
+    "team_nid":"all",
+    "team_indice":"0"
+    }
   }
-}
- 
-  map.on('click', function() {
-    var features = map.queryRenderedFeatures({ layers: ['factories'] });
-    //Populate features for the listing overlay.
-    renderListings(features);
-  });
+]
+};
+//end of geojson file
+
+//current teams affectations geojson file
+  var algo_factories = {
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.46742,22.339452 ]
+    },
+    "properties": {
+    "team_indice":8,
+    "nid":197389,
+    "work_capacity":4423
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.365758,22.490336 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":330963,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.366524,22.487747 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":197377,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.368328,22.505713 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":330973,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375164,22.509915 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":330936,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.352,22.4584 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":330970,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.32456,22.420834 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":197381,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.331531,22.393117 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":249934,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43494,22.535997 ]
+    },
+    "properties": {
+    "team_indice":7,
+    "nid":330974,
+    "work_capacity":17909
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.385329,22.557079 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197363,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.304946,22.616003 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197382,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.303676,22.617108 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197383,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.258406,22.688569 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197385,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.261396,22.711603 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197384,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.214201,22.649341 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197387,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.210212,22.642108 ]
+    },
+    "properties": {
+    "team_indice":6,
+    "nid":197386,
+    "work_capacity":15405
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.403992,22.553931 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330926,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.402147,22.544501 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330929,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.397331,22.541959 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":197364,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.399608,22.536482 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330928,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.40724,22.542584 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330945,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.40762,22.547184 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330946,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.411437,22.540141 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":330947,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.385329,22.557079 ]
+    },
+    "properties": {
+    "team_indice":5,
+    "nid":197363,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.376396,22.55201 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330931,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375843,22.554129 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330950,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.374591,22.553853 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330951,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375991,22.544239 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330932,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370254,22.54625 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330960,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.364614,22.549125 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330953,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.356932,22.546358 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":197373,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.355119,22.543449 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330959,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.355869,22.541343 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330952,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.368723,22.540675 ]
+    },
+    "properties": {
+    "team_indice":4,
+    "nid":330949,
+    "work_capacity":17898
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370426,22.513229 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":330935,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.362431,22.519384 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":330957,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.353492,22.517992 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":197372,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.354422,22.515466 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":197371,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.361458,22.541661 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":197374,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.358295,22.539625 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":330958,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370296,22.549457 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":330937,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.369689,22.551344 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":330927,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375794,22.55114 ]
+    },
+    "properties": {
+    "team_indice":3,
+    "nid":367083,
+    "work_capacity":17985
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.367099,22.478767 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":197378,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.371258,22.478039 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330975,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.360234,22.492065 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330971,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.362174,22.500012 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330969,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.371193,22.506306 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330967,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.376439,22.503142 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330939,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.377756,22.505842 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330948,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.375505,22.501189 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":197375,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.374666,22.499024 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330966,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.373629,22.496089 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330965,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.37008,22.509586 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":197362,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.362431,22.519384 ]
+    },
+    "properties": {
+    "team_indice":2,
+    "nid":330957,
+    "work_capacity":17728
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.413154,22.522315 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197366,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.416794,22.527527 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330938,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.412912,22.532338 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197367,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.426321,22.52564 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197368,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.42157,22.520277 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197365,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.435854,22.504831 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330941,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43323,22.508342 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330944,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.439423,22.513377 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197370,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.43696,22.513043 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197369,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.440958,22.525391 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197380,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.458969,22.5176 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197379,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.450846,22.51568 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330978,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.416199,22.506047 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330942,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.4336,22.50519 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330940,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.370533,22.493307 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":197376,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.357301,22.485119 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330962,
+    "work_capacity":17957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 113.371258,22.478039 ]
+    },
+    "properties": {
+    "team_indice":1,
+    "nid":330975,
+    "work_capacity":17957
+    }
+  },
+   {
+   "type": "Feature",
+   "geometry": {
+        "type": "Point",
+        "coordinates":  [ 113.39842, 22.51444 ]
+    },
+    "properties": {
+    "team_indice":0,
+    "nid":"origin",
+    "work_capacity":0
+    }
+  }
+]
+};
+//end of geojson file
+
+//the followig block determines colors attributed to teams
+teams_colors = {"1": 'rgba(94,170,188,0.9)', 
+"2": "rgba(98,97,148,0.9)", 
+"3": "rgba(182,162,217,0.9)",
+"4": "rgba(94,161,215,0.9)",
+"5": "rgba(83,202,191,0.9)",
+"6": "rgba(116,112,206,0.9)",
+"7": "rgba(125,81,221,0.9)"
+};
+
+//the following block displays mapbox map
+var map = new mapboxgl.Map({  
+container: 'map', 
+style: 'mapbox://styles/juliettelat/ck3pf0oj06p9l1crutxskznmt',
+center: [113.32174,22.517012], 
+zoom: 9.8
 });
+
+
+///////////////DATASET SELECTION/////////////////////////////////////////////////////////////////////////////////////
+
+//builds a bridge between map and data
+
+var factories = algo_factories;
+var button_current = document.getElementById('button-current');
+    button_current.addEventListener('click', function () {
+      console.log ('current clicked successfully');
+      var factories = current_factories;
+      console.log(factories);
+    });
+var button_algo = document.getElementById('button-algo');
+    button_algo.addEventListener('click', function () {
+      console.log ('algo clicked successfully');
+      var factories = algo_factories;
+      console.log(factories);
+    })
+console.log(factories);
+console.log('test');
+
+  map.on ('load', function () {
+
+
+
+    map.addSource('factories', {
+        "type": "geojson",
+        "data": factories
+    });
+
+
+
+  /*
+      var factories = 
+  });*/
+
+
+  ///////////////MAP LAYERS/////////////////////////////////////////////////////////////////////////////////////
+
+    map.addLayer({
+      'id':'factories',
+      'type': 'circle',
+      'source': 'factories',
+      //'source-layer': 'original', CETTE LIGNE FAIT BUGUER
+      'paint': {
+        // make circles larger as the user zooms from z12 to z22
+        'circle-radius': {
+        'base': 0,
+        'stops': [ [11, 3], [12, 4], [14, 6], [16, 8], [18, 12]]
+        },
+        //color all circles in white
+        'circle-color': 'rgba(170, 170, 170, 0.6)',
+      }
+    },
+    );
+
+  //adds a layer that displays highlighted factories when a factory is clicked
+    map.addLayer({
+      'id': 'factories-highlighted',
+      'type': 'circle',
+      'source': 'factories',
+      //'source-layer': 'original', ENCORE LA LIGNE DU DEMON
+      'paint':{
+        'circle-radius': {
+        'base': 0,
+        'stops': [ [11, 4], [12, 5], [14, 7], [16, 9], [18, 13]]
+        },
+       // 'circle-color':'rgba(0, 200, 255, 0.9)',
+        'circle-color': [
+        'match',
+        ['get', 'team_indice'],
+        "1", teams_colors["1"], 
+        "2", teams_colors["2"], 
+        "3", teams_colors["3"],
+        "4", teams_colors["4"],
+        "5", teams_colors["5"],
+        "6", teams_colors["6"],
+        "7", teams_colors["7"],
+         /*  other */ 'rgba(0, 200, 255, 0.9)'
+        ]    
+      },
+      'filter': ['in', 'team_indice', '']
+    });
+
+    //adds a layer that displays highlighted factories when a factory is clicked
+    map.addLayer({
+      'id': 'unique-factory',
+      'type': 'circle',
+      'source': 'factories',
+      //'source-layer': 'original', ENCORE LA LIGNE DU DEMON
+      'paint':{
+        'circle-radius': {
+        'base': 0,
+        'stops': [ [11, 4], [12, 5], [14, 7], [16, 9], [18, 13]]
+        },
+       // 'circle-color':'rgba(0, 200, 255, 0.9)',
+        'circle-color': 'rgba(255, 0, 0, 0.9)',   
+      },
+      'filter': ['in', 'nid', '']
+    });
+
+  ///////////////INTERACTIVE MAP/////////////////////////////////////////////////////////////////////////////////////
+
+    //highlights factories that are visited by the same teams than the clicked point on the map
+    map.on('click', 'factories', function(e) {
+      menuFact.style.display = "none"; //removes factories list
+      var feature = e.features[0];
+      //actualizes the unique-factory filter
+      map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
+      map.setFilter ('unique-factory', ['in', 'nid', feature.properties.nid]); //refill filter
+      //actualizes the factories-highlighted filter
+      map.setFilter('factories-highlighted', ['in', 'team_indice', '']); //empty filter
+      var featuresgroup = map.querySourceFeatures ('factories', {  
+        sourceLayer: 'factories',
+        filter: ['in', 'nid', feature.properties.nid]
+      }); //creates an array with all factories with same nid (features of the same factory visited by several teams)
+      var filter = featuresgroup.reduce(
+        function(memo, feature) {
+        memo.push(feature.properties.team_indice);
+        return memo;
+        }, //creates a group with all the factories visited by the same teams as the factory selected
+      ['in', 'team_indice']
+      );
+      map.setFilter('factories-highlighted', filter); //refill filter
+    });
+
+    map.on('mouseleave', 'factories', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('mousemove', 'factories', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+  ///////////////INTERACTIVE LIST/////////////////////////////////////////////////////////////////////////////////////
+
+  // Create a popup, but don't add it to the map yet.
+  var popup = new mapboxgl.Popup({
+    closeButton: false
+  });
+   
+  var listingEl = document.getElementById('teams-listing');
+  var listingFact = document.getElementById('factories-listing');
+  var menuFact = document.getElementsByClassName('factories-menu')[0];
+   
+  function renderListings (features) {
+    //DISPLAYS TEAM LIST
+    listingEl.innerHTML = ''; //clear team list
+    if (features.length) {
+      var i;
+      var rank = features.length - 1;
+      var imax = features[rank].properties.team_indice; //puts the number of teams in the dataset in the variable imax
+      for (i = 0; i <= imax; i++) { //diplays the list
+        if (i == 0) {
+          var item = document.createElement('a');
+              item.textContent = 'No affectation 0';   
+          listingEl.appendChild(item);       
+        }
+        else {
+          var item = document.createElement('a');
+              item.textContent = 'Team ' + i;
+          listingEl.appendChild(item);
+        }
+        item.addEventListener('click', function renderListings () {
+          //DISPLAYS HIGLIGHTED DOTS ON THE MAP WHEN TEAM LIST IS CLICKED ON
+            map.setFilter('factories-highlighted', ['in', 'team_indice', '']); //empty filter
+            map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
+            var j = parseInt (event.target.firstChild.textContent.slice(-1),10) ; //gets the team number from the button
+            map.setFilter ('factories-highlighted', ['in', 'team_indice', j]); //refill filter
+          //DISPLAYS THE FACTORIES LIST WHEN A TEAM IS CLICKED ON
+            //menuFact = '';
+            console.log(menuFact);
+            menuFact.style.display = "block"; //displays html factory list background
+            listingFact.innerHTML = ''; //clear factory list
+              features.forEach(function(feature) {
+              if (feature.properties.team_indice == j) { //pour enlever le if, d'abord sélectionner les j, ensuite les afficher
+                var itemFact = document.createElement('a');
+                    itemFact.textContent = 'factory ' + feature.properties.nid;
+                listingFact.appendChild(itemFact);
+                  itemFact.addEventListener('click', function renderListings () {
+                //HIGHLIGHTS THE FACTORY ON THE MAP WHEN FACTORY LIST IS CLICKED ON
+                  map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
+                  map.setFilter ('unique-factory', ['in', 'nid', feature.properties.nid]); //refill filter
+              });
+              }
+            });
+        });
+      };
+    }
+  }
+        
+
+
+  /*function renderListings (features) {
+    // Clear any existing listings
+    listingEl.innerHTML = '';
+    if (features.length) {
+      features.forEach(function(feature, index) {
+        //console.log(index); permet de voir dans la console les valeurs que prend index
+        var prop = feature.properties;
+        if (index == 0) {
+          var item = document.createElement('a');
+              item.textContent = 'Team :' + prop.team_nid;
+          var item2 = document.createElement('a');
+              item2.textContent =  'factory ' + prop.nid;    
+          listingEl.appendChild(item);
+          listingEl.appendChild(item2);        
+        }
+        else {
+          //console.log(index-1);
+          if (prop.team_nid !== features[index-1].properties.team_nid ) { 
+            var item = document.createElement('a');
+                item.textContent =  'Team ' + prop.team_nid;
+            var item2 = document.createElement('a');
+                item2.textContent =  'factory ' + prop.nid;
+            listingEl.appendChild(item);
+            listingEl.appendChild(item2);
+          }
+          else { 
+            var item2 = document.createElement('a');
+            item2.textContent =  'factory ' + prop.nid;
+            listingEl.appendChild(item2);
+          }
+        }
+        item2.addEventListener('click', function() {
+          //vide le filtre précédent
+          map.setFilter('factories-highlighted', ['in', 'team_indice', '']);
+          // factories.getFeatureByProperty = function(feature.properties.nid);
+          // the fisrt filter gets all the factories with the same nid
+          // in case a factory is visited by more than one team
+          var j = 330944;
+            //var featuresgroup = map.querySourceFeatures ('factories', {
+              //sourceLayer: 'factories',
+              //filter: ['==', 'nid', feature.properties.nid]
+            //});
+          //console.log (featuresgroup);
+
+          map.setFilter ('factories-highlighted', ['in', 'nid', j]);
+          // The second filter gets all the factories that are visited 
+          // by the same teams than the factory in the featuresgroup filter
+            //var filter = featuresgroup.reduce(
+            //  function(memo, feature) {
+            //    memo.push(feature.properties.team_indice);
+            //    return memo;
+            //  },
+            //  ['in', 'team_indice']
+            //);
+            //console.log (filter);
+            //map.setFilter('factories-highlighted', filter);
+          //Displays POPUP when mouse clicks a list element
+            //popup
+            //  .setLngLat(feature.geometry.coordinates)
+            //  .setText(prop.nid + ': team' + prop.team_nid)
+            //  .addTo(map);
+          });
+      });
+    }
+  }*/
+
+    map.on('click', function() {
+      var features = map.queryRenderedFeatures({ layers: ['factories'] });
+      //Populate features for the listing overlay.
+      renderListings(features);
+    });
+  });
+
 
 
