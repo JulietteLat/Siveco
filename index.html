@@ -20,6 +20,12 @@
         <div id="button-current" class="button">
             <h3> Current postings</h3>
         </div>
+        <div class='list-title' id="team-list-title">
+            <h3 class='info-panel-title'> Teams list </h3>
+        </div>
+        <div class='list-title' id="factories-list-title">
+            <h3 class='info-panel-title'> Factories list </h3>
+        </div>
         <div class="map-overlay">
             <div id="teams-listing" class="listing"></div>
         </div>
@@ -36,8 +42,15 @@
                 <p id='nb-of-unvisited-factories'></p>
                 <p>Total working load</p>
                 <p id='total-working-load'></p>
-
+            <h3 class='info-panel-title'> Team information </h3>
+            <div id='team-info'>
+                <p>Database team nid:</p>
+                <p id='team-nid'></p>
+                <p>Total-work load of the team:</p>
+                <p id='total-team-working-load'></p>
+            </div>
             <h3 class='info-panel-title'> Factory information </h3>
+            <div id='fact-info'>
                 <p>Database factory nid:</p>
                 <p id='nid'></p>
                 <p>Factory address:</p>
@@ -50,12 +63,10 @@
                 <p id='inner-working-load'></p>
                 <p>Work load per team:</p>
                 <p id='fact-team-working-load'></p>
-                
-            <h3 class='info-panel-title'> Team information </h3>
-                <p>Database team nid:</p>
-                <p id='team-nid'></p>
-                <p>Total-work load of the team:</p>
-                <p id='total-team-working-load'></p>
+            </div>   
+        </div>
+        <div id=credits>
+            <p> Map by Mapbox GL </br> Realization by Juliette Latorre </br> UTSEUS - A19 </br> Database from Siveco China(c) </p>
         </div>
 <script src="assets/main.js"></script>
     </body>

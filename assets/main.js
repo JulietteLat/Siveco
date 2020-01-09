@@ -1979,6 +1979,8 @@ zoom: 9.8
     button_current.addEventListener('click', function () {
       button_algo.style.background = 'rgba(255, 255, 255, 0.6)';
       button_current.style.background = 'rgba(255, 255, 255, 0.8)';
+      factInfo.style.display = "none";
+      teamInfo.style.display = "none";
       map.removeLayer('factories');
       map.removeLayer('factories-highlighted');
       map.removeLayer('unique-factory');
@@ -2061,8 +2063,10 @@ zoom: 9.8
     
     var button_algo = document.getElementById('button-algo');
     button_algo.addEventListener('click', function () {
-    button_current.style.background = 'rgba(255, 255, 255, 0.6)';
-    button_algo.style.background = 'rgba(255, 255, 255, 0.8)';
+      button_current.style.background = 'rgba(255, 255, 255, 0.6)';
+      button_algo.style.background = 'rgba(255, 255, 255, 0.8)';
+      factInfo.style.display = "none";
+      teamInfo.style.display = "none";
       map.removeLayer('factories');
       map.removeLayer('factories-highlighted');
       map.removeLayer('unique-factory');
@@ -2212,6 +2216,7 @@ zoom: 9.8
     //highlights factories that are visited by the same teams than the clicked point on the map
     map.on('click', 'factories', function(e) {
       menuFact.style.display = "none"; //removes factories list
+      menuFactTitle.style.display = "none";
       var feature = e.features[0];
       //actualizes the unique-factory filter
       map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
@@ -2230,7 +2235,9 @@ zoom: 9.8
       ['in', 'team_indice']
       );
       map.setFilter('factories-highlighted', filter); //refill filter
+      teamInfo.style.display = "block";
       displayTeamInfoFromMap(feature);
+      factInfo.style.display = "block";
       displayFactoryInfo (feature);
     });
 
@@ -2245,7 +2252,10 @@ zoom: 9.8
   ///////////////INTERACTIVE LIST///////////////////////////////////////////////////////////////////////////////////// 
   var listingEl = document.getElementById('teams-listing');
   var listingFact = document.getElementById('factories-listing');
-  var menuFact = document.getElementsByClassName('factories-menu')[0];  
+  var menuFact = document.getElementsByClassName('factories-menu')[0];
+  var menuFactTitle = document.getElementById('factories-list-title');  
+  var teamInfo = document.getElementById('team-info');
+  var factInfo = document.getElementById('fact-info'); 
   function renderListings (features) {
     //DISPLAYS TEAM LIST
     listingEl.innerHTML = ''; //clear team list
@@ -2266,15 +2276,16 @@ zoom: 9.8
         }
         item.addEventListener('click', function renderListings () {
           //DISPLAYS HIGLIGHTED DOTS ON THE MAP WHEN TEAM LIST IS CLICKED ON
+            factInfo.style.display = "none";
             map.setFilter('factories-highlighted', ['in', 'team_indice', '']); //empty filter
             map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
             var j = parseInt (event.target.firstChild.textContent.slice(-1),10) ; //gets the team number from the button
             map.setFilter ('factories-highlighted', ['in', 'team_indice', j]); //refill filter
+            teamInfo.style.display = "block";
             displayTeamInfoFromList(features, j);
           //DISPLAYS THE FACTORIES LIST WHEN A TEAM IS CLICKED ON
-            //menuFact = '';
-            console.log(menuFact);
             menuFact.style.display = "block"; //displays html factory list background
+            menuFactTitle.style.display = "block";
             listingFact.innerHTML = ''; //clear factory list
               features.forEach(function(feature) {
               if (feature.properties.team_indice == j) { //pour enlever le if, d'abord sélectionner les j, ensuite les afficher
@@ -2285,6 +2296,7 @@ zoom: 9.8
                 //HIGHLIGHTS THE FACTORY ON THE MAP WHEN FACTORY LIST IS CLICKED ON
                   map.setFilter('unique-factory', ['in', 'nid', '']); //empty filter
                   map.setFilter ('unique-factory', ['in', 'nid', feature.properties.nid]); //refill filter
+                  factInfo.style.display = "block";
                   displayFactoryInfo (feature);
               });
               }
@@ -2294,6 +2306,8 @@ zoom: 9.8
     }
   }
 ///////////////INFO PANEL//////////////////////////////////////////////////////////////////////////////////
+    
+
     function displayGeneralInfo (features){
       var rank = features.length - 1;
       var imax = features[rank].properties.team_indice;
@@ -2366,6 +2380,7 @@ zoom: 9.8
 
     map.on('click', function() {
       menuFact.style.display = "none"; //removes factories list
+      menuFactTitle.style.display = "none";
       var features = map.queryRenderedFeatures({ layers: ['factories'] });
       //Populate features for the listing overlay.
       renderListings(features);

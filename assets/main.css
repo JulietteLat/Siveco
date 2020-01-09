@@ -11,6 +11,25 @@ height: 5%;
 background-color: rgba(255, 255, 255, 0.6);
 }
 
+.list-title{
+display: block;
+position: absolute;
+height:10%;
+width: 10%;
+background: rgba(255, 255, 255, 0.6);
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+border-right: 1px solid rgba(0, 0, 0, 0.1);
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+	#teams-list-title {
+	left:0;
+	}
+
+	#factories-list-title {
+	display: none;
+	left:10%;
+	}
+
 .button{
 display: block;
 position: absolute;
@@ -32,15 +51,15 @@ border-left: 1px solid rgba(0, 0, 0, 0.1);
  	}
 
 	#button-current {
-	bottom: 85%;
+	bottom: 95%;
 	}
 
 	#button-algo {
-	bottom: 80%;
+	bottom: 90%;
 	}
 
 h1 {
-font: 14px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font: 16px/26px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 font-weight: bold;
 text-align: center;	
 }
@@ -48,7 +67,7 @@ text-align: center;
 h2 {
 font: 14px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 text-align: center;	
-margin-top: -1%;
+margin-top: -0.7%;
 }
 
 h3 {
@@ -67,22 +86,32 @@ text-align: center;
 margin-right: 25%;
 }
 
+#credits{
+position:absolute;
+left:0;
+bottom:0;
+width:10%;
+height:10%;
+}
 
+#credits p{
+margin:10px;
+font: 8px/10px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+text-align: left;
+}
 
 .titlebox {
 position: absolute;
 width: 100%;
 top: 0;
 bottom: 90%;
-border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-background-color: rgba(255, 255, 255, 0.6);
 }
 
 .info-panel {
 display: block;
 position: absolute;
-top: 20%;
+top: 10%;
 bottom: 0;
 width: 20%;
 left:85%;
@@ -94,14 +123,23 @@ border-left: 1px solid rgba(0, 0, 0, 0.1);
 	padding-left: 0;
 	}
 
+	.info-panel #team-info {
+	display:none;
+	}
+
+	.info-panel #fact-info {
+	display:none;
+	}
+
 .map-overlay {
 position: absolute;
-width: 15%;
+width: 10%;
 top: 10%;
 bottom: 0;
 left: 0;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 border-right: 1px solid rgba(0, 0, 0, 0.1);
+border-top: 1px solid rgba(0, 0, 0, 0.1);
 background-color: rgba(255, 255, 255, 0.6);
 max-height: 100%;
 overflow: hidden;
@@ -153,11 +191,14 @@ overflow: hidden;
 .factories-menu {
 display: none;
 position: absolute;
-width: 15%;
+width: 10%;
 top: 10%;
 bottom: 0;
-left: 15%;
+left: 10%;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+border-right: 1px solid rgba(0, 0, 0, 0.1);
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+border-left: 1px solid rgba(0, 0, 0, 0.1);
 background-color: rgba(255, 255, 255, 0.6);
 max-height: 100%;
 overflow: hidden;
